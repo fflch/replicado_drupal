@@ -1,5 +1,25 @@
-XXXXXXX
-d
-ede
+<h1>{{ label }}</h1>
 
-{{ content }}
+<p>{{ description }}</p>
+
+<br>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+          {% for key, value in content[0] %}
+            <th> {{ key }} </th>
+          {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+
+      {% for row in content %}
+        <tr>
+        {% for key, value in row %}
+            <td>{{ value }}</td>
+        {% endfor %}
+        </tr>
+      {% endfor %}
+
+    </tbody>
+  </table>

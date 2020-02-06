@@ -15,7 +15,6 @@ class QueryEntityListBuilder extends ConfigEntityListBuilder {
    */
   public function buildHeader() {
     $header['label'] = $this->t('Consulta');
-    //$header['id'] = $this->t('Machine name');
     $header['route'] = $this->t('Endereço');
     return $header + parent::buildHeader();
   }
@@ -25,8 +24,7 @@ class QueryEntityListBuilder extends ConfigEntityListBuilder {
    */
   public function buildRow(EntityInterface $entity) {
     $row['label'] = $entity->label();
-    $row['route'] = $entity->getRoute();
-    //$row['id'] = $entity->id();
+    $row['route'] = "/listas".$entity->getRoute();
     // You probably want a few more properties here...
     return $row + parent::buildRow($entity);
   }

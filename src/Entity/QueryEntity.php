@@ -55,6 +55,7 @@ class QueryEntity extends ConfigEntityBase implements QueryEntityInterface {
   protected $label;
   protected $sql;
   protected $route;
+  protected $description;
 
   public function setSql($sql) {
     $this->sql = $sql;
@@ -70,6 +71,14 @@ class QueryEntity extends ConfigEntityBase implements QueryEntityInterface {
 
   public function getRoute() {
     return $this->route;
+  }
+
+  public function setDescription($description) {
+    $this->description = $description;
+  }
+
+  public function getDescription() {
+    return $this->description;
   }
 
 }

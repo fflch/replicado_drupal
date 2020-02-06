@@ -26,6 +26,12 @@ class QueryEntityForm extends EntityForm {
       '#required' => TRUE,
     ];
 
+    $form['description'] = [
+      '#type' => 'textarea',
+      '#title' => $this->t('Descrição da página'),
+      '#default_value' => $query_entity->getDescription(),
+    ];
+
     $form['sql'] = [
       '#type' => 'textarea',
       '#title' => $this->t('SQL'),

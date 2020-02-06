@@ -9,7 +9,7 @@ replicado.connection_form:
     _admin_route: TRUE
 
 replicado.query_output_controller_output:
-  path: '/listas/{consulta}'
+  path: '/listas/{route}'
   defaults:
     _controller: '\Drupal\replicado\Controller\QueryOutputController::output'
     _title: ''

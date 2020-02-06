@@ -12,6 +12,6 @@ replicado.query_output_controller_output:
   path: '/listas/{consulta}'
   defaults:
     _controller: '\Drupal\replicado\Controller\QueryOutputController::output'
-    _title: 'output'
+    _title: ''
   requirements:
     _permission: 'access content'

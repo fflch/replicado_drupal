@@ -6,7 +6,7 @@ replicado.connection_form:
   weight: 99
 
 replicado.entity.query_entity.collection:
-  title: 'Gerenciar consultas do Replicado'
+  title: 'Replicado: Gerenciar consultas'
   route_name: entity.query_entity.collection
   description: 'Lista de consultas'
   parent: system.admin_config_system

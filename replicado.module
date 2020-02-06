@@ -26,10 +26,13 @@ function replicado_help($route_name, RouteMatchInterface $route_match) {
 /**
  * Implements hook_theme().
  */
-function replicado_theme() {
-  return [
-    'replicado' => [
-      'render element' => 'children',
-    ],
-  ];
+function replicado_theme($existing, $type, $theme, $path) {
+  return array(
+    'consulta' => array(
+      'template' => 'consulta',
+      // This array contains the default values.
+      // You should not use a PHP variable.
+      'variables' => array('content' => NULL),
+    ),
+  );
 }

@@ -54,7 +54,7 @@ class ConnectionForm extends ConfigFormBase {
       '#default_value' => $config->get('database_user'),
     ];
     $form['database_password'] = [
-      '#type' => 'password',
+      '#type' => 'textfield',
       '#title' => $this->t('Database password'),
       '#maxlength' => 64,
       '#size' => 20,

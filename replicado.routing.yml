@@ -7,3 +7,11 @@ replicado.connection_form:
     _permission: 'access administration pages'
   options:
     _admin_route: TRUE
+
+replicado.query_output_controller_output:
+  path: '/listas/{consulta}'
+  defaults:
+    _controller: '\Drupal\replicado\Controller\QueryOutputController::output'
+    _title: 'output'
+  requirements:
+    _permission: 'access content'

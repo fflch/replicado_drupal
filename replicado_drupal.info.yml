@@ -1,0 +1,5 @@
+name: 'replicado_drupal'
+type: module
+description: 'Replicado Drupal'
+core: 8.x
+package: 'Universiade de São Paulo'

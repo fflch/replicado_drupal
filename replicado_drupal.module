@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains replicado_drupal.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function replicado_drupal_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the replicado_drupal module.
+    case 'help.page.replicado_drupal':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Replicado Drupal') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function replicado_drupal_theme() {
+  return [
+    'replicado_drupal' => [
+      'render element' => 'children',
+    ],
+  ];
+}

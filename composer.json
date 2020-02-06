@@ -1,5 +1,5 @@
 {
-    "name": "replicado_drupal",
+    "name": "replicado",
     "type": "drupal-module",
     "description": "Replicado Drupal",
     "keywords": [
@@ -8,6 +8,6 @@
     "minimum-stability": "dev",
     "support": {
         "issues": "https://www.drupal.org/project/issues/replicado_drupal",
-        "source": "http://cgit.drupalcode.org/replicado_drupal",
-    },
+        "source": "http://cgit.drupalcode.org/replicado_drupal"
+    }
 }

@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains replicado_drupal.module.
+ * Contains replicado.module.
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
@@ -10,10 +10,10 @@ use Drupal\Core\Routing\RouteMatchInterface;
 /**
  * Implements hook_help().
  */
-function replicado_drupal_help($route_name, RouteMatchInterface $route_match) {
+function replicado_help($route_name, RouteMatchInterface $route_match) {
   switch ($route_name) {
-    // Main module help for the replicado_drupal module.
-    case 'help.page.replicado_drupal':
+    // Main module help for the replicado module.
+    case 'help.page.replicado':
       $output = '';
       $output .= '<h3>' . t('About') . '</h3>';
       $output .= '<p>' . t('Replicado Drupal') . '</p>';
@@ -26,9 +26,9 @@ function replicado_drupal_help($route_name, RouteMatchInterface $route_match) {
 /**
  * Implements hook_theme().
  */
-function replicado_drupal_theme() {
+function replicado_theme() {
   return [
-    'replicado_drupal' => [
+    'replicado' => [
       'render element' => 'children',
     ],
   ];

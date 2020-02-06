@@ -1,0 +1,9 @@
+replicado.connection_form:
+  path: '/admin/config/replicado/connection'
+  defaults:
+    _form: '\Drupal\replicado\Form\ConnectionForm'
+    _title: 'ConnectionForm'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE

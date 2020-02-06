@@ -1,0 +1,5 @@
+entity.query_entity.add_form:
+  route_name: entity.query_entity.add_form
+  title: 'Adicionar nova consulta'
+  appears_on:
+    - entity.query_entity.collection

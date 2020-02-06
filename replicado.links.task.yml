@@ -1,0 +1,5 @@
+replicado.entity.query_entity.collection:
+  title: 'Gerenciar consultas'
+  route_name: entity.query_entity.collection
+  base_route: replicado.connection_form
+  weight: 99

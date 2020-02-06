@@ -1,0 +1,4 @@
+replicado:
+  database_name: "fflch"
+  database_port: 1498
+  database_host: "10.20.30.100"

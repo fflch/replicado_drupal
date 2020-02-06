@@ -1,0 +1,16 @@
+replicado.query_entity.*:
+  type: config_entity
+  label: 'Query entity config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string
+    sql:
+      type: string
+    route:
+      type: string

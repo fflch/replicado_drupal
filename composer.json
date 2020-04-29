@@ -1,13 +1,14 @@
 {
-    "name": "replicado",
-    "type": "drupal-module",
+    "name": "uspdev/replicado_drupal",
     "description": "Replicado Drupal",
-    "keywords": [
-    ],
-    "homepage": "https://www.drupal.org/project/replicado_drupal",
-    "minimum-stability": "dev",
-    "support": {
-        "issues": "https://www.drupal.org/project/issues/replicado_drupal",
-        "source": "http://cgit.drupalcode.org/replicado_drupal"
-    }
+    "type": "drupal-module",
+    "require": {
+        "uspdev/replicado": "^1.5"
+    },
+    "authors": [
+        {
+            "name": "Thiago Gomes Verissimo",
+            "email": "verissimotgv@gmail.com"
+        }
+    ]
 }

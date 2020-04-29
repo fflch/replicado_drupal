@@ -28,9 +28,13 @@ function replicado_help($route_name, RouteMatchInterface $route_match) {
  */
 function replicado_theme($existing, $type, $theme, $path) {
   return array(
-    'consulta' => array(
-      'template' => 'consulta',
-      'variables' => array('content' => NULL, 'label' => NULL, 'description' => NULL),
+    'replicado' => array(
+      'template' => 'replicado',
+      'variables' => [
+        'content' => NULL, 
+        'label' => NULL, 
+        'description' => NULL
+      ],
     ),
   );
 }

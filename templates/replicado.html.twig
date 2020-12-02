@@ -24,6 +24,8 @@ Total: {{ content |length }}
                   <img src="http://buscatextual.cnpq.br/buscatextual/images/titulo-sistema.png">
                 </a>
               </td>
+            {% elseif key == 'Nome' and value != '' %}
+            <td><a href="/docente/{{row.codpes}}"> {{value}} </a></td>
             {% else %}
               <td>{{ value }}</td>
             {% endif %}

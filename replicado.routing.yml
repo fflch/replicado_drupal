@@ -15,3 +15,11 @@ replicado.query_output_controller_output:
     _title: ''
   requirements:
     _permission: 'access content'
+
+replicado.esmeralda:
+  path: '/docente/{codpes}'
+  defaults:
+    _controller: '\Drupal\replicado\Controller\DocenteController::docente'
+    _title: ''
+  requirements:
+    _permission: 'access content'

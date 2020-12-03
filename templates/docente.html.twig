@@ -1,0 +1,10 @@
+
+<h2>Resumo:</h2> {{ content.resumo }}
+{% if content.livros %}
+<h2>Livros publicados:</h2> 
+
+{% for key, value in content.livros %}
+    {{ value["TITULO-DO-LIVRO"] }}<br> 
+{% endfor %}
+{% endif %}
+

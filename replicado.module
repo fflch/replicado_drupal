@@ -36,5 +36,14 @@ function replicado_theme($existing, $type, $theme, $path) {
         'description' => NULL
       ],
     ),
+      'docente' => array(
+      'template' => 'docente',
+      'variables' => [
+        'content' => NULL, 
+        'label' => NULL, 
+        'description' => NULL
+      ],
+    ),
   );
 }
+

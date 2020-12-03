@@ -16,7 +16,7 @@ replicado.query_output_controller_output:
   requirements:
     _permission: 'access content'
 
-replicado.esmeralda:
+replicado.docentes:
   path: '/docente/{codpes}'
   defaults:
     _controller: '\Drupal\replicado\Controller\DocenteController::docente'

@@ -1,5 +1,12 @@
 {% if content.resumo %}
-    <h2>Resumo:</h2> {{ content.resumo }}
+    <div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-body">Resumo</div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-body azul">{{ content.resumo }}</div>
+    </div>
+    </div>
 {% endif %}
 
 {% if content.livros %}

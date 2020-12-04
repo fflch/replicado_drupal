@@ -1,44 +1,85 @@
 {% if content.resumo %}
-    <div class="panel-group">
-    <div class="panel panel-default">
-        <div class="panel-body">Resumo</div>
+    <div class="panel panel-default panel-docente">
+        <div class="panel-heading">
+            <h2 role="button" data-toggle="collapse" href="#collapseResumo" aria-expanded="true" aria-controls="collapseResumo">Resumo</h2>
+        </div>
+        <div class="panel-body collapse in" id="collapseResumo">
+            <p>{{ content.resumo }}</p>
+        </div>
     </div>
-    <div class="panel panel-default">
-        <div class="panel-body azul">{{ content.resumo }}</div>
-    </div>
+{% endif %}
+
+{% if content.linhas_pesquisa %}
+    <div class="panel panel-default panel-docente ">
+        <div class="panel-heading">
+            <h2 role="button" data-toggle="collapse" href="#collapseLinhaPesquisa" aria-expanded="true" aria-controls="collapseLinhaPesquisa">
+                Linhas de pesquisa
+            </h2>
+        </div>
+        <ul class="list-group collapse in" id="collapseLinhaPesquisa">
+            {% for key, value in content.linhas_pesquisa %}
+                <li class="list-group-item"> {{ value }} </li> 
+            {% endfor %}
+        </ul>
+        
     </div>
 {% endif %}
 
 {% if content.livros %}
-    <h2>Livros publicados:</h2> 
-    {% for key, value in content.livros %}
-        Título: {{ value["TITULO-DO-LIVRO"] }}<br> 
-        Ano: {{ value["ANO"] }}<br> 
-        N° páginas: {{ value["NUMERO-DE-PAGINAS"] }}<br> 
-        Editora: {{ value["NOME-DA-EDITORA"] }}<hr> 
-    {% endfor %}
-{% endif %}
-
-{% if content.linhas_pesquisa %}
-    <h2>Linhas de pesquisa:</h2> 
-    <ul>
-        {% for key, value in content.linhas_pesquisa %}
-            <li> {{ value }} </li> 
-        {% endfor %}
-    </ul>
+    <div class="panel panel-default panel-docente">
+        <div class="panel-heading">
+            <h2 role="button" data-toggle="collapse" href="#collapseLivrosPublicados" aria-expanded="true" aria-controls="collapseLivrosPublicados">
+                Livros publicados
+            </h2>
+        </div>
+        
+        <ul class="list-group collapse in" id="collapseLivrosPublicados">
+            {% for key, value in content.livros %}
+                <li class="list-group-item">
+                {% for k, val in value.AUTORES %}
+                    {{ val["NOME-PARA-CITACAO"] }} 
+                    {% if k + 1 <  value.AUTORES|length %}
+                        ;
+                    {% endif %}
+                {% endfor %}
+                .
+                {{ value["TITULO-DO-LIVRO"] }}. 
+                {{ value["CIDADE-DA-EDITORA"] }}: {{ value["NOME-DA-EDITORA"] }},
+                {{ value["ANO"] }}. {{ value["NUMERO-DE-PAGINAS"] }}p. 
+                
+                </li>
+            {% endfor %}
+        </ul>
+      
+    </div>
 {% endif %}
 
 {% if content.artigos %}
-    <h2>Artigos:</h2> 
-    {% for key, value in content.artigos %}
-        Título do artigo: {{ value["TITULO-DO-ARTIGO"] }}<br> 
-        Título do periódico ou revista: {{ value["TITULO-DO-PERIODICO-OU-REVISTA"] }}<br> 
-        Volume: {{ value["VOLUME"] }}<br> 
-        Página inicial: {{ value["PAGINA-INICIAL"] }}<br> 
-        Página final: {{ value["PAGINA-FINAL"] }}<br> 
-        Ano: {{ value["ANO"] }}<hr>
-    {% endfor %}
+    <div class="panel panel-default panel-docente">
+        <div class="panel-heading">
+            <h2 role="button" data-toggle="collapse" href="#collapseArtigos" aria-expanded="true" aria-controls="collapseArtigos">
+                Artigos completos publicados em periódicos
+            </h2>
+        </div>
+        
+        <ul class="list-group collapse in" id="collapseArtigos">
+            {% for key, value in content.artigos %}
+                <li class="list-group-item">
+                    {% for k, val in value.AUTORES %}
+                        {{ val["NOME-PARA-CITACAO"] }} 
+                        {% if k + 1 <  value.AUTORES|length %}
+                            ;
+                        {% endif %}
+                    {% endfor %}
+                    .
+                    {{ value["TITULO-DO-ARTIGO"] }}. 
+                    {{ value["TITULO-DO-PERIODICO-OU-REVISTA"] }},
+                    v. {{ value["VOLUME"] }},
+                    p. {{ value["PAGINA-INICIAL"] }} - {{ value["PAGINA-FINAL"] }},
+                    {{ value["ANO"] }}.
+                </li>
+            {% endfor %}
+        </ul>
+       
+    </div>
 {% endif %}
-
-
-

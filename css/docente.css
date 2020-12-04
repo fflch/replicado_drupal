@@ -1,4 +1,8 @@
-.azul {
-    color: blue;
-    background-color: gray;
+.panel-docente .panel-heading h2 {
+  margin: 0;
 }
+
+.panel-docente .panel-heading h2[role="button"] {
+  cursor: pointer;
+}
+/*# sourceMappingURL=docente.css.map */

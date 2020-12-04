@@ -34,12 +34,14 @@ class DocenteController extends ControllerBase {
     putenv("REPLICADO_USERNAME={$database_user}");
     putenv("REPLICADO_PASSWORD={$database_password}");
     
-    $label = 'olá';
-    $description = 'hi';
+    $label = 'Docente';
+    $description = 'Informações do Docente';
+
 
     $content['resumo'] = Lattes::getResumoCV($codpes);
     $content['livros'] = Lattes::getLivrosPublicados($codpes);
-    dump($content['livros']);
+    $content['linhas_pesquisa'] = Lattes::getLinhasPesquisa($codpes);
+    $content['artigos'] = Lattes::getArtigos($codpes);
 
         return [
           '#theme' => 'docente',

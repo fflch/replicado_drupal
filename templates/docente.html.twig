@@ -1,10 +1,37 @@
-
-<h2>Resumo:</h2> {{ content.resumo }}
-{% if content.livros %}
-<h2>Livros publicados:</h2> 
-
-{% for key, value in content.livros %}
-    {{ value["TITULO-DO-LIVRO"] }}<br> 
-{% endfor %}
+{% if content.resumo %}
+    <h2>Resumo:</h2> {{ content.resumo }}
 {% endif %}
+
+{% if content.livros %}
+    <h2>Livros publicados:</h2> 
+    {% for key, value in content.livros %}
+        Título: {{ value["TITULO-DO-LIVRO"] }}<br> 
+        Ano: {{ value["ANO"] }}<br> 
+        N° páginas: {{ value["NUMERO-DE-PAGINAS"] }}<br> 
+        Editora: {{ value["NOME-DA-EDITORA"] }}<hr> 
+    {% endfor %}
+{% endif %}
+
+{% if content.linhas_pesquisa %}
+    <h2>Linhas de pesquisa:</h2> 
+    <ul>
+        {% for key, value in content.linhas_pesquisa %}
+            <li> {{ value }} </li> 
+        {% endfor %}
+    </ul>
+{% endif %}
+
+{% if content.artigos %}
+    <h2>Artigos:</h2> 
+    {% for key, value in content.artigos %}
+        Título do artigo: {{ value["TITULO-DO-ARTIGO"] }}<br> 
+        Título do periódico ou revista: {{ value["TITULO-DO-PERIODICO-OU-REVISTA"] }}<br> 
+        Volume: {{ value["VOLUME"] }}<br> 
+        Página inicial: {{ value["PAGINA-INICIAL"] }}<br> 
+        Página final: {{ value["PAGINA-FINAL"] }}<br> 
+        Ano: {{ value["ANO"] }}<hr>
+    {% endfor %}
+{% endif %}
+
+
 

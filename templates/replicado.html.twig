@@ -9,7 +9,9 @@ Total: {{ content |length }}
     <thead>
       <tr>
           {% for key, value in content[0] %}
-            <th> {{ key }} </th>
+            {% if key != 'codpes' %}
+              <th> {{ key }} </th>
+            {% endif %}
           {% endfor %}
       </tr>
     </thead>
@@ -24,6 +26,7 @@ Total: {{ content |length }}
                   <img src="http://buscatextual.cnpq.br/buscatextual/images/titulo-sistema.png">
                 </a>
               </td>
+            {% elseif key == 'codpes' %}
             {% elseif key == 'Nome' and value != '' %}
             <td><a href="/docente/{{row.codpes}}"> {{value}} </a></td>
             {% else %}

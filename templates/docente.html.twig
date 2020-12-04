@@ -1,30 +1,39 @@
 {% if content.resumo %}
-    <div class="panel panel-default">
-        <div class="panel-heading"><h2>Resumo:</h2></div>
-        <div class="panel-body">
+    <div class="panel panel-default panel-docente">
+        <div class="panel-heading">
+            <h2 role="button" data-toggle="collapse" href="#collapseResumo" aria-expanded="true" aria-controls="collapseResumo">Resumo</h2>
+        </div>
+        <div class="panel-body collapse in" id="collapseResumo">
             <p>{{ content.resumo }}</p>
         </div>
     </div>
 {% endif %}
 
 {% if content.linhas_pesquisa %}
-    <div class="panel panel-default">
-        <div class="panel-heading"><h2>Linhas de pesquisa:</h2></div>
-        <div class="panel-body">
-            <ul class="list-group">
-                {% for key, value in content.linhas_pesquisa %}
-                    <li class="list-group-item"> {{ value }} </li> 
-                {% endfor %}
-            </ul>
+    <div class="panel panel-default panel-docente ">
+        <div class="panel-heading">
+            <h2 role="button" data-toggle="collapse" href="#collapseLinhaPesquisa" aria-expanded="true" aria-controls="collapseLinhaPesquisa">
+                Linhas de pesquisa
+            </h2>
         </div>
+        <ul class="list-group collapse in" id="collapseLinhaPesquisa">
+            {% for key, value in content.linhas_pesquisa %}
+                <li class="list-group-item"> {{ value }} </li> 
+            {% endfor %}
+        </ul>
+        
     </div>
 {% endif %}
 
 {% if content.livros %}
-    <div class="panel panel-default">
-        <div class="panel-heading"><h2>Livros publicados:</h2></div>
-        <div class="panel-body">
-            <ul class="list-group">
+    <div class="panel panel-default panel-docente">
+        <div class="panel-heading">
+            <h2 role="button" data-toggle="collapse" href="#collapseLivrosPublicados" aria-expanded="true" aria-controls="collapseLivrosPublicados">
+                Livros publicados
+            </h2>
+        </div>
+        
+        <ul class="list-group collapse in" id="collapseLivrosPublicados">
             {% for key, value in content.livros %}
                 <li class="list-group-item">
                 {% for k, val in value.AUTORES %}
@@ -40,16 +49,20 @@
                 
                 </li>
             {% endfor %}
-            </ul>
-        </div>
+        </ul>
+      
     </div>
 {% endif %}
 
 {% if content.artigos %}
-    <div class="panel panel-default">
-        <div class="panel-heading"><h2>Artigos completos publicados em periódicos:</h2></div>
-        <div class="panel-body">
-            <ul class="list-group">
+    <div class="panel panel-default panel-docente">
+        <div class="panel-heading">
+            <h2 role="button" data-toggle="collapse" href="#collapseArtigos" aria-expanded="true" aria-controls="collapseArtigos">
+                Artigos completos publicados em periódicos
+            </h2>
+        </div>
+        
+        <ul class="list-group collapse in" id="collapseArtigos">
             {% for key, value in content.artigos %}
                 <li class="list-group-item">
                     {% for k, val in value.AUTORES %}
@@ -66,7 +79,7 @@
                     {{ value["ANO"] }}.
                 </li>
             {% endfor %}
-            </ul>
-        </div>
+        </ul>
+       
     </div>
 {% endif %}

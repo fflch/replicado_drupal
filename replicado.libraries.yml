@@ -1,9 +1,9 @@
 replicado:
-  version: 1.x
+  css:
+    theme:
+      css/replicado.css: {}
+      css/docente.css: {}
   js:
     js/replicado.js: {}
   dependencies:
     - core/jquery
-  css:
-    theme:
-      css/replicado.css: {}

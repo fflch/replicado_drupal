@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAEQ,cAFM,CACV,cAAc,CACV,EAAE,CAAA;EACE,MAAM,EAAE,CAAC;CAIZ;;AAPT,AAIY,cAJE,CACV,cAAc,CACV,EAAE,CAEG,AAAA,IAAC,CAAK,QAAQ,AAAb,EAAc;EACZ,MAAM,EAAE,OAAO;CAClB",
+    "sources": [
+        "docente.scss"
+    ],
+    "names": [],
+    "file": "docente.css"
+}

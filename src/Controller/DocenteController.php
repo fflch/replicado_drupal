@@ -42,6 +42,7 @@ class DocenteController extends ControllerBase {
     $content['livros'] = Lattes::getLivrosPublicados($codpes);
     $content['linhas_pesquisa'] = Lattes::getLinhasPesquisa($codpes);
     $content['artigos'] = Lattes::getArtigos($codpes);
+    $content['capitulos'] = Lattes::getCapitulosLivros($codpes);
 
         return [
           '#theme' => 'docente',

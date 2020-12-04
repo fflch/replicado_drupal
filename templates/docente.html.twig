@@ -42,7 +42,7 @@
                         ;
                     {% endif %}
                 {% endfor %}
-                .
+                
                 {{ value["TITULO-DO-LIVRO"] }}. 
                 {{ value["CIDADE-DA-EDITORA"] }}: {{ value["NOME-DA-EDITORA"] }},
                 {{ value["ANO"] }}. {{ value["NUMERO-DE-PAGINAS"] }}p. 
@@ -71,7 +71,7 @@
                             ;
                         {% endif %}
                     {% endfor %}
-                    .
+                    
                     {{ value["TITULO-DO-ARTIGO"] }}. 
                     {{ value["TITULO-DO-PERIODICO-OU-REVISTA"] }},
                     v. {{ value["VOLUME"] }},
@@ -81,5 +81,34 @@
             {% endfor %}
         </ul>
        
+    </div>
+{% endif %}
+
+{% if content.capitulos %}
+    <div class="panel panel-default panel-docente"> 
+        <div class="panel-heading">
+            <h2 role="button" data-toggle="collapse" href="#collapseCapitulos" aria-expanded="true" aria-controls="collapseCapitulos">
+                Capítulos publicados
+            </h2>
+        </div>
+        
+        <ul class="list-group collapse in" id="collapseCapitulos">
+            {% for key, value in content.capitulos %}
+                <li class="list-group-item">
+                    {% for k, val in value.AUTORES %}
+                        {{ val["NOME-PARA-CITACAO"] }} 
+                        {% if k + 1 <  value.AUTORES|length %}
+                            ;
+                        {% endif %}
+                    {% endfor %}
+                    
+                    {{ value["TITULO-DO-CAPITULO-DO-LIVRO"] }}. 
+                    {{ value["TITULO-DO-LIVRO"] }},
+                    v. {{ value["NUMERO-DE-VOLUMES"] }},
+                    p. {{ value["PAGINA-INICIAL"] }} - {{ value["PAGINA-FINAL"] }},
+                    {{ value["ANO"] }}.
+                </li>
+            {% endfor %}
+        </ul>
     </div>
 {% endif %}

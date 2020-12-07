@@ -1,3 +1,8 @@
+<div>
+    <h1><center>{{ content.nome }}<center></h1>
+</div>
+<br>
+
 {% if content.resumo %}
     <div class="panel panel-default panel-docente">
         <div class="panel-heading">
@@ -111,4 +116,34 @@
             {% endfor %}
         </ul>
     </div>
+{% endif %}
+
+{% if content.orientandos %}
+<div class="panel panel-default panel-docente">
+    <div class="panel-heading">
+        <h2 role="button" data-toggle="collapse" href="#collapseOrientandos" aria-expanded="true" aria-controls="collapseOrientandos">Orientandos</h2>
+    </div>
+        <div class="panel-body collapse in" id="collapseOrientandos">
+        <table>
+        <tr style="color:#ffffff;">
+            <td bgcolor="#223d72">Nome orientando</td>
+            <td bgcolor="#223d72">Nível de Programa</td>
+        </tr>
+        {% for row in content.orientandos %}
+            <tr>
+                <td>{{ row.nompes }}</td>
+                {% if row.nivpgm == 'DO' %}
+                <td>Doutorado</td>
+                {% endif %}
+                {% if row.nivpgm == 'DD' %}
+                <td>Doutorado Direto</td>
+                {% endif %}
+                {% if row.nivpgm == 'ME' %}
+                <td>Mestrado</td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+        </table>
+        </div>
+</div>
 {% endif %}

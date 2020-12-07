@@ -6,6 +6,8 @@ use Drupal\Core\Controller\ControllerBase;
 use Uspdev\Replicado\DB;
 use Uspdev\Replicado\Uteis;
 use Uspdev\Replicado\Lattes;
+use Uspdev\Replicado\Pessoa;
+use Uspdev\Replicado\Posgraduacao;
 
 /**
  * Class QueryOutputController.
@@ -37,12 +39,14 @@ class DocenteController extends ControllerBase {
     $label = 'Docente';
     $description = 'Informações do Docente';
 
-
+    $content['nome'] = Pessoa::dump($codpes)['nompes'];
     $content['resumo'] = Lattes::getResumoCV($codpes);
     $content['livros'] = Lattes::getLivrosPublicados($codpes);
     $content['linhas_pesquisa'] = Lattes::getLinhasPesquisa($codpes);
     $content['artigos'] = Lattes::getArtigos($codpes);
     $content['capitulos'] = Lattes::getCapitulosLivros($codpes);
+    $content['orientandos'] = Posgraduacao::obterOrientandos($codpes);
+    #dump($content['orientandos']);
 
         return [
           '#theme' => 'docente',

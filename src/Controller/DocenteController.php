@@ -54,7 +54,7 @@ class DocenteController extends ControllerBase {
           '#label' => $label,    
           '#description' => $description,  
           '#cache' => [
-            'max-age' => 0,
+            'max-age' => 8600,
           ],  
           '#attached' => [
             'library' => [

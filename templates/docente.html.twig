@@ -1,3 +1,8 @@
+<div>
+    <h1><center>{{ content.nome }}<center></h1>
+</div>
+<br>
+
 {% if content.resumo %}
     <div class="panel panel-default panel-docente">
         <div class="panel-heading">
@@ -42,7 +47,7 @@
                         ;
                     {% endif %}
                 {% endfor %}
-                .
+                
                 {{ value["TITULO-DO-LIVRO"] }}. 
                 {{ value["CIDADE-DA-EDITORA"] }}: {{ value["NOME-DA-EDITORA"] }},
                 {{ value["ANO"] }}. {{ value["NUMERO-DE-PAGINAS"] }}p. 
@@ -71,7 +76,7 @@
                             ;
                         {% endif %}
                     {% endfor %}
-                    .
+                    
                     {{ value["TITULO-DO-ARTIGO"] }}. 
                     {{ value["TITULO-DO-PERIODICO-OU-REVISTA"] }},
                     v. {{ value["VOLUME"] }},
@@ -82,4 +87,63 @@
         </ul>
        
     </div>
+{% endif %}
+
+{% if content.capitulos %}
+    <div class="panel panel-default panel-docente"> 
+        <div class="panel-heading">
+            <h2 role="button" data-toggle="collapse" href="#collapseCapitulos" aria-expanded="true" aria-controls="collapseCapitulos">
+                Capítulos publicados
+            </h2>
+        </div>
+        
+        <ul class="list-group collapse in" id="collapseCapitulos">
+            {% for key, value in content.capitulos %}
+                <li class="list-group-item">
+                    {% for k, val in value.AUTORES %}
+                        {{ val["NOME-PARA-CITACAO"] }} 
+                        {% if k + 1 <  value.AUTORES|length %}
+                            ;
+                        {% endif %}
+                    {% endfor %}
+                    
+                    {{ value["TITULO-DO-CAPITULO-DO-LIVRO"] }}. 
+                    {{ value["TITULO-DO-LIVRO"] }},
+                    v. {{ value["NUMERO-DE-VOLUMES"] }},
+                    p. {{ value["PAGINA-INICIAL"] }} - {{ value["PAGINA-FINAL"] }},
+                    {{ value["ANO"] }}.
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}
+
+{% if content.orientandos %}
+<div class="panel panel-default panel-docente">
+    <div class="panel-heading">
+        <h2 role="button" data-toggle="collapse" href="#collapseOrientandos" aria-expanded="true" aria-controls="collapseOrientandos">Orientandos</h2>
+    </div>
+        <div class="panel-body collapse in" id="collapseOrientandos">
+        <table>
+        <tr style="color:#ffffff;">
+            <td bgcolor="#223d72">Nome orientando</td>
+            <td bgcolor="#223d72">Nível de Programa</td>
+        </tr>
+        {% for row in content.orientandos %}
+            <tr>
+                <td>{{ row.nompes }}</td>
+                {% if row.nivpgm == 'DO' %}
+                <td>Doutorado</td>
+                {% endif %}
+                {% if row.nivpgm == 'DD' %}
+                <td>Doutorado Direto</td>
+                {% endif %}
+                {% if row.nivpgm == 'ME' %}
+                <td>Mestrado</td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+        </table>
+        </div>
+</div>
 {% endif %}

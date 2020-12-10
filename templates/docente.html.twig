@@ -127,11 +127,13 @@
         <table>
         <tr style="color:#ffffff;">
             <td bgcolor="#223d72">Nome orientando</td>
+            <td bgcolor="#223d72">Área</td>
             <td bgcolor="#223d72">Nível de Programa</td>
         </tr>
         {% for row in content.orientandos %}
             <tr>
                 <td>{{ row.nompes }}</td>
+                <td>{{ row.nomare }}</td>
                 {% if row.nivpgm == 'DO' %}
                 <td>Doutorado</td>
                 {% endif %}

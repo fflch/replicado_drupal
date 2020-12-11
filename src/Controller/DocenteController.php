@@ -46,6 +46,8 @@ class DocenteController extends ControllerBase {
     $content['artigos'] = Lattes::getArtigos($codpes);
     $content['capitulos'] = Lattes::getCapitulosLivros($codpes);
     $content['orientandos'] = Posgraduacao::obterOrientandos($codpes);
+    $content['orientandos_concluidos'] = Posgraduacao::obterOrientandosConcluidos($codpes);
+
     #dump($content['orientandos']);
 
         return [

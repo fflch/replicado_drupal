@@ -48,8 +48,6 @@ class DocenteController extends ControllerBase {
     $content['orientandos'] = Posgraduacao::obterOrientandos($codpes);
     $content['orientandos_concluidos'] = Posgraduacao::obterOrientandosConcluidos($codpes);
 
-    #dump($content['orientandos']);
-
         return [
           '#theme' => 'docente',
           '#content' => $content,

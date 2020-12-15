@@ -1,5 +1,5 @@
 <div>
-    <h1><center>{{ content.nome }}<center></h1>
+    <h1><center>{{ content.nome|convert_encoding('UTF-8', 'ISO-8859-1') }}<center></h1>
 </div>
 <br>
 
@@ -132,8 +132,8 @@
         </tr>
         {% for row in content.orientandos %}
             <tr>
-                <td>{{ row.nompes }}</td>
-                <td>{{ row.nomare }}</td>
+                <td>{{ row.nompes|convert_encoding('UTF-8', 'ISO-8859-1') }}</td>
+                <td>{{ row.nomare|convert_encoding('UTF-8', 'ISO-8859-1') }}</td>
                 {% if row.nivpgm == 'DO' %}
                 <td>Doutorado</td>
                 {% endif %}
@@ -143,6 +143,40 @@
                 {% if row.nivpgm == 'ME' %}
                 <td>Mestrado</td>
                 {% endif %}
+            </tr>
+        {% endfor %}
+        </table>
+        </div>
+</div>
+{% endif %}
+
+{% if content.orientandos_concluidos %}
+<div class="panel panel-default panel-docente">
+    <div class="panel-heading">
+        <h2 role="button" data-toggle="collapse" href="#collapseOrientandosConcluidos" aria-expanded="true" aria-controls="collapseOrientandosConcluidos">Orientandos Concluídos</h2>
+    </div>
+        <div class="panel-body collapse in" id="collapseOrientandosConcluidos">
+        <table>
+        <tr style="color:#ffffff;">
+            <td bgcolor="#223d72">Nome orientando</td>
+            <td bgcolor="#223d72">Área</td>
+            <td bgcolor="#223d72">Nível de Programa</td>
+            <td bgcolor="#223d72">Data de defesa</td>
+        </tr>
+        {% for row in content.orientandos_concluidos %}
+            <tr>
+                <td>{{ row.nompes|convert_encoding('UTF-8', 'ISO-8859-1') }}</td>
+                <td>{{ row.nomare|convert_encoding('UTF-8', 'ISO-8859-1') }}</td>
+                {% if row.nivpgm == 'DO' %}
+                <td>Doutorado</td>
+                {% endif %}
+                {% if row.nivpgm == 'DD' %}
+                <td>Doutorado Direto</td>
+                {% endif %}
+                {% if row.nivpgm == 'ME' %}
+                <td>Mestrado</td>
+                {% endif %}
+                <td>{{ row.dtadfapgm|date('m-d-Y') }}</td>
             </tr>
         {% endfor %}
         </table>

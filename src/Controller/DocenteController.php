@@ -41,12 +41,12 @@ class DocenteController extends ControllerBase {
 
     $content['nome'] = Pessoa::dump($codpes)['nompes'];
     $content['resumo'] = Lattes::getResumoCV($codpes);
-    $content['livros'] = Lattes::getLivrosPublicados($codpes);
+    $content['livros'] = Lattes::getLivrosPublicados($codpes, null, 'periodo', date('Y')-5, date('Y'));
     $content['linhas_pesquisa'] = Lattes::getLinhasPesquisa($codpes);
-    $content['artigos'] = Lattes::getArtigos($codpes);
-    $content['capitulos'] = Lattes::getCapitulosLivros($codpes);
-    $content['orientandos'] = Posgraduacao::obterOrientandosAtivos($codpes);
-    $content['orientandos_concluidos'] = Posgraduacao::obterOrientandosConcluidos($codpes);
+    $content['artigos'] = Lattes::getArtigos($codpes, null, 'periodo', date('Y')-5, date('Y'));
+    $content['capitulos'] = Lattes::getCapitulosLivros($codpes, null, 'periodo', date('Y')-5, date('Y'));
+    $content['orientandos'] = Posgraduacao::obterOrientandos($codpes);
+    #dump($content['orientandos']);
 
         return [
           '#theme' => 'docente',
